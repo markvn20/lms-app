@@ -1,5 +1,7 @@
 import './App.css';
-import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react';
+import axios from "axios";
+
 
 function App() {
   const [username, setUsername] = useState('');
@@ -10,7 +12,7 @@ function App() {
     if(username === "" && password ==="") {
       alert('enter a username and password')
     } else {
-      
+      handleSubmit()
     }
   }
 
@@ -18,6 +20,22 @@ function App() {
     setUsername(e.target.value)
   }
 
+  const handleSubmit = () => {
+    // axios.post("localhost:5000/login", {username, password})
+    // .then((res) => {
+    //   console.log(res)
+    // })
+    // .err((err) => {
+    //   console.log(err)
+    // })
+    axios.post("/login", { username, password })
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.log(error.response.data)
+    })
+  }
 
 
   useEffect(() => {
