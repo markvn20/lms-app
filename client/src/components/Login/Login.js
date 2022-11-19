@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import axios from "axios";
 import { useUserAuth, UserContextProvider } from '../../Context/ContextProvider';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 const Login = () => {
     const navigate = useNavigate();
@@ -52,8 +53,8 @@ const Login = () => {
     })
     .catch((error) => {
         console.log(error.response.data)
+        console.log('wtf')
         alert('Username or Password is incorrect.')
-        setAuth(error.response.data.access)
     })
     }
 
@@ -65,7 +66,12 @@ const Login = () => {
     }, [auth])
 
     return (
-        <div className='Login'>
+        <motion.div 
+            className='Login'
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
             <form onSubmit={submit}>
                 <input type="text" name="username" onChange={handleUsername} value={username} />
                 <input type="password" name="password" onChange={(e) => {
@@ -74,7 +80,7 @@ const Login = () => {
                 <button>submit</button>
                 <div>{auth ? "Yes" : "No"}</div>
             </form>
-        </div>
+        </motion.div>
     );
 };
 

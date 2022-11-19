@@ -1,0 +1,35 @@
+
+
+
+.NavContainerActive {
+    height: 100%;
+    padding-left: 4em;
+}
+
+.NavRight nav {
+    display: none;
+}
+
+.NavRight nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+    margin-bottom: 20px;
+
+.HamburgerContainer {
+   
+}
+
+.NavSmallContainer {
+    height: 100%;
+}
+
+
+
+
+.hamburgerActive {
+    display: block !important;
+    top: 20%;
+    position: absolute;
+}

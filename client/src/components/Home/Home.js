@@ -1,13 +1,23 @@
 import React from 'react';
+import './Home.css'
 import { useUserAuth, UserContextProvider } from '../../Context/ContextProvider';
+import { motion } from "framer-motion"
 
 const Home = () => {
     const {test} = useUserAuth()
     return (
-        <div className='Home'>
-            <div className='HomeLeft'>Home Left</div>
-            <div className='HomeRight'>Home Right</div>
-        </div>
+        <motion.div 
+            className="Home"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
+            <div className='HomeLeft HomeSection'>
+                <div className='HomeLeftContainer'>
+                    Home
+                </div>
+            </div>
+        </motion.div>
     );
 };
 

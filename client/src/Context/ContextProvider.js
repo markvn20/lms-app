@@ -10,7 +10,8 @@ export const UserContextProvider = ({ children }) => {
     const [password, setPassword] = useState('');
     const [auth, setAuth] = useState("");
 
-    axios.post("/checkLogin",
+    useEffect(() => {
+        axios.post("/checkLogin",
     {
         withCredentials: true,
         headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
@@ -25,6 +26,7 @@ export const UserContextProvider = ({ children }) => {
         console.log(error.response.data)
         setAuth(error.response.data.access)
     })
+    }, [])
 
     const logout = () => {
         axios.post("/logout",

@@ -1,0 +1,163 @@
+$lightText: #575c82;
+
+.postUserInfo {
+  
+}
+
+
+.RightContent {
+  flex: 2;
+}
+
+.updateContainer {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  // border-top-left-radius: 20px;
+  background: #202342;  
+}
+
+.updateActionContainer {
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 24px;
+
+  .collapse {
+    font-size: 24px;
+    color: $lightText;
+  }
+
+  .updates {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .alert {
+      background: #ea2323;
+      padding: 4px 10px;
+      gap: 20px;
+      font-size: 12px;
+      border-radius: 4px;
+
+    }
+    .copy {
+      color: $lightText;
+    }
+  }
+}
+
+
+
+.notificationContainer {
+  padding: 38px;
+  box-sizing: border-box;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 80%;
+    left: 10%;
+    background-color: $lightText;
+    opacity: .2;
+  }
+
+  .contentContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      margin-right: 10px;
+
+      .imgContainerMain {
+        position: relative;
+
+        .alert {
+          position: absolute;
+          z-index: 22;
+          background: #ea2323;
+          top: -8px;
+          left: -8px;
+          border-radius: 100%;
+          padding: 8px;
+          display: flex;
+          padding: 4px;
+          justify-content: center;
+          align-items: center;
+    
+        }
+      }
+  
+      .imgContainer {
+        height: 40px;
+        width: 40px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 100%;
+    
+        img {
+          width: 75px;
+          position: absolute;
+          left: -10px;
+          top: -6px;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+
+      .username, .date {
+        float: left;
+        width: 50%;
+      }
+
+      .username {
+        font-size: 13px;
+      }
+
+      .date {
+        text-align: right;
+        font-size: 12px;
+        color: $lightText;
+      }
+      .assignmentText {
+        color: #575c82;
+        line-height: 1.1em;
+        font-size: 12px;
+        margin-top: 26px;
+      }
+      
+
+    }
+  }
+}
+
+.updateContent {
+  height: 100%;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: scroll;
+    ::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $lightText;
+  margin: 1em 0;
+  padding: 0;
+  width: 84%;
+  margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
+  opacity: .2;
+}

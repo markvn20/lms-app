@@ -1,10 +1,16 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Main = () => {
     return (
-        <div className='Main'>
+        <motion.div
+            className='Main'
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
             Main
-        </div>
+        </motion.div>
     );
 };
 
